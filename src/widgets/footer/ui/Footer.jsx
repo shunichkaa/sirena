@@ -16,7 +16,7 @@ export function Footer() {
             <a href="#contacts">Контакты</a>
           </li>
           <li>
-            <a href="/documents">Сведения и документы</a>
+            <a href="#/documents">Сведения и документы</a>
           </li>
         </ul>
       </nav>

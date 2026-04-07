@@ -15,13 +15,6 @@ export function ReviewsSection() {
             ученики
           </>
         }
-        tag={
-          <>
-            Реальные
-            <br />
-            впечатления
-          </>
-        }
       />
       <div className="reviews-slider" aria-label="Отзывы учеников">
         <div className="scroll-track">

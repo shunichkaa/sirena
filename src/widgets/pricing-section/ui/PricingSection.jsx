@@ -14,13 +14,6 @@ export function PricingSection() {
             и пакеты
           </>
         }
-        tag={
-          <>
-            Тарифы
-            <br />
-            и условия
-          </>
-        }
       />
       <div className="pricing-grid">
         {pricingItems.map((item) => (

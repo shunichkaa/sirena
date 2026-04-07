@@ -14,13 +14,6 @@ export function ConsultSection() {
             и запись
           </>
         }
-        tag={
-          <>
-            Напишите
-            <br />
-            нам
-          </>
-        }
       />
 
       <div className="consult-layout">

@@ -12,13 +12,6 @@ export function AboutSection() {
             выбирают нас
           </>
         }
-        tag={
-          <>
-            Коротко
-            <br />
-            о школе
-          </>
-        }
       />
       <div className="feature-grid">
         <article className="feature-card">

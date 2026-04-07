@@ -287,6 +287,17 @@ h1 {
   padding-bottom: 32px;
 }
 
+.section-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.section-header .section-num,
+.section-header .section-title {
+  margin: 0;
+}
+
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(22px);
@@ -930,7 +941,7 @@ body.vision-mode .documents-page-title {
   padding-left: 0;
   list-style: none;
   display: grid;
-  gap: 12px;
+  gap: 16px;
 }
 
 .documents-category-title {
@@ -938,7 +949,7 @@ body.vision-mode .documents-page-title {
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.35;
-  color: var(--text);
+  color: var(--accent);
 }
 
 .documents-file-list {

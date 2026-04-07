@@ -14,13 +14,6 @@ export function CategoriesSection() {
             обучения
           </>
         }
-        tag={
-          <>
-            A / B / C
-            <br />
-            форматы
-          </>
-        }
       />
       <div className="categories-grid">
         {categoryItems.map((item) => (
