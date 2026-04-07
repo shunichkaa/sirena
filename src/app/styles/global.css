@@ -490,7 +490,11 @@ h1 {
 }
 
 .reviews-slider {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .scroll-track {
@@ -499,6 +503,12 @@ h1 {
   width: max-content;
   animation: reviewsMarquee 58s linear infinite;
   padding: 0 2px 20px;
+}
+
+.reviews-slider:hover .scroll-track,
+.reviews-slider:active .scroll-track,
+.reviews-slider:focus-within .scroll-track {
+  animation-play-state: paused;
 }
 
 .scroll-track .review-card {

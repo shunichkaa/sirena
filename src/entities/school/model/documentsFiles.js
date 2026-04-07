@@ -43,5 +43,5 @@ export const documentsCategoryFiles = {
 }
 
 export function getDocumentPdfHref(fileName) {
-  return `/documents/${encodeURIComponent(fileName)}`
+  return `${import.meta.env.BASE_URL}documents/${encodeURIComponent(fileName)}`
 }
