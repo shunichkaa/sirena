@@ -1,11 +1,24 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import '../app/styles/global.css'
 import { LandingPage } from '../pages/landing/ui/LandingPage'
 import { VisionModeToggle } from '../features/vision-mode/ui/VisionModeToggle'
 import { DocumentsPage } from '../pages/documents/ui/DocumentsPage'
 
 export function App() {
-  const isDocumentsPage = window.location.pathname === '/documents'
+  const [hash, setHash] = useState(window.location.hash)
+  const isDocumentsPage = hash.startsWith('#/documents')
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setHash(window.location.hash)
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange)
+    }
+  }, [])
 
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal-on-scroll')

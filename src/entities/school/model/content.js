@@ -13,7 +13,7 @@ export const headerNavItems = [
   { href: '#about', label: 'О школе' },
   { href: '#pricing', label: 'Цены' },
   { href: '#contacts', label: 'Контакты' },
-  { href: '/documents', label: 'Сведения и документы' },
+  { href: '#/documents', label: 'Сведения и документы' },
 ]
 
 export const faqItems = [

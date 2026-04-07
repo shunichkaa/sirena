@@ -5,7 +5,7 @@ export function DocumentsPage() {
   return (
     <main className="documents-page section">
       <header className="documents-page-header">
-        <a className="documents-back-link" href="/">
+        <a className="documents-back-link" href="#top">
           <span aria-hidden="true">←</span>
           <span>На главную</span>
         </a>
