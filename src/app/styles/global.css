@@ -4,16 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  margin: 0;
-  min-height: 100%;
-}
-
-html {
-  scroll-padding-top: 84px;
-  color-scheme: dark;
+:root {
   --bg: #0a0c0f;
   --surface: #111418;
   --surface2: #181c22;
@@ -28,32 +19,15 @@ html {
   --map-placeholder-bg: rgba(255, 255, 255, 0.02);
 }
 
-html[data-theme='light'] {
-  color-scheme: light;
-  --bg: #f4f2ec;
-  --surface: #ebe9e4;
-  --surface2: #e3e1dc;
-  --text: #16181c;
-  --muted: #5c6470;
-  --border: rgba(22, 24, 28, 0.1);
-  --header-bg-top: rgba(244, 242, 236, 0.95);
-  --header-bg-bottom: rgba(244, 242, 236, 0.78);
-  --hero-watermark: rgba(100, 110, 40, 0.08);
-  --map-placeholder-bg: rgba(22, 24, 28, 0.05);
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
 }
 
-html[data-theme='dark'] {
-  color-scheme: dark;
-  --bg: #0a0c0f;
-  --surface: #111418;
-  --surface2: #181c22;
-  --text: #f0ede8;
-  --muted: #8a919c;
-  --border: rgba(240, 237, 232, 0.08);
-  --header-bg-top: rgba(10, 12, 15, 0.95);
-  --header-bg-bottom: rgba(10, 12, 15, 0.78);
-  --hero-watermark: rgba(232, 255, 71, 0.03);
-  --map-placeholder-bg: rgba(255, 255, 255, 0.02);
+html {
+  scroll-padding-top: 84px;
 }
 
 body {
@@ -109,26 +83,12 @@ body {
   white-space: nowrap;
 }
 
-.header-floating-actions {
+.vision-mode-toggle {
   position: fixed;
   top: 12px;
   right: 12px;
-  z-index: 100;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-  max-width: min(calc(100vw - 24px), calc(100vw - 140px));
-  align-items: flex-start;
-}
-
-.header-floating-actions .vision-mode-toggle,
-.header-floating-actions .theme-toggle {
-  position: static;
-  top: auto;
-  right: auto;
-  max-width: none;
+  z-index: 50;
+  max-width: calc(100vw - 24px);
 }
 
 .vision-mode-toggle-btn {
@@ -146,26 +106,6 @@ body {
 }
 
 .vision-mode-toggle-btn svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-.theme-toggle-btn {
-  backdrop-filter: blur(8px);
-  background: var(--surface);
-  font-size: 0.95rem;
-  padding: 10px;
-  min-width: 44px;
-  min-height: 44px;
-  white-space: nowrap;
-}
-
-.theme-toggle .btn {
-  width: auto;
-}
-
-.theme-toggle-btn svg {
   width: 18px;
   height: 18px;
   fill: currentColor;
@@ -1239,7 +1179,8 @@ body.vision-mode .documents-page-title {
     font-size: 1.5rem;
   }
 
-  .header-floating-actions {
-    max-width: min(calc(100vw - 24px), calc(100vw - 100px));
+  .vision-mode-toggle {
+    left: auto;
+    right: 12px;
   }
 }
