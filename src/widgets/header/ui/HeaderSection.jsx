@@ -14,7 +14,7 @@ export function HeaderSection() {
 
   return (
     <header className="site-header">
-      <a className="site-logo" href="#top">
+      <a className="site-logo" href="/">
         Сирена.
       </a>
       <button

@@ -725,7 +725,7 @@ h1 {
   place-items: center;
   color: var(--muted);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   background: var(--map-placeholder-bg);
 }
 
