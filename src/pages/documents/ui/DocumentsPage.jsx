@@ -1,4 +1,5 @@
 import { documentsCategories, documentsPagePlaceholders } from '../../../entities/school/model/content'
+import { documentsCategoryFiles, getDocumentPdfHref } from '../../../entities/school/model/documentsFiles'
 
 export function DocumentsPage() {
   return (
@@ -49,14 +50,28 @@ export function DocumentsPage() {
         </h2>
         <nav aria-labelledby="documents-categories-title">
           <ul className="documents-list">
-            {documentsCategories.map((category) => (
-              <li key={category}>
-                <span className="documents-link" role="link" aria-disabled="true">
-                  {category}
-                </span>
-                <p className="documents-placeholder">Здесь будет ссылка или документ по этому разделу.</p>
-              </li>
-            ))}
+            {documentsCategories.map((category) => {
+              const files = documentsCategoryFiles[category]
+              return (
+                <li key={category}>
+                  <h3 className="documents-category-title">{category}</h3>
+                  <ul className="documents-file-list">
+                    {files.map((item) => (
+                      <li key={item.fileName}>
+                        <a
+                          className="documents-link"
+                          href={getDocumentPdfHref(item.fileName)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              )
+            })}
           </ul>
         </nav>
       </section>

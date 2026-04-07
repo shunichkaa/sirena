@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import '../app/styles/global.css'
 import { LandingPage } from '../pages/landing/ui/LandingPage'
 import { VisionModeToggle } from '../features/vision-mode/ui/VisionModeToggle'
+import { ThemeToggle } from '../features/theme-toggle/ui/ThemeToggle'
 import { DocumentsPage } from '../pages/documents/ui/DocumentsPage'
 
 export function App() {
@@ -40,7 +41,10 @@ export function App() {
 
   return (
     <>
-      <VisionModeToggle />
+      <div className="header-floating-actions">
+        <VisionModeToggle />
+        <ThemeToggle />
+      </div>
       {isDocumentsPage ? <DocumentsPage /> : <LandingPage />}
     </>
   )
