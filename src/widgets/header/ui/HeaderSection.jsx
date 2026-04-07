@@ -14,7 +14,7 @@ export function HeaderSection() {
 
   return (
     <header className="site-header">
-      <a className="site-logo" href={import.meta.env.BASE_URL}>
+      <a className="site-logo" href="#top">
         Сирена.
       </a>
       <button
