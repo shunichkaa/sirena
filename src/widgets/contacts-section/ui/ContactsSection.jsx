@@ -1,7 +1,42 @@
+import {useEffect, useRef, useState} from 'react'
 import {SectionHeader} from '../../../shared/ui/SectionHeader'
 import {schoolContacts} from '../../../entities/school/model/content'
 
 export function ContactsSection() {
+	const mapContainerRef = useRef(null)
+	const [isMapLoaded, setIsMapLoaded] = useState(false)
+
+	useEffect(() => {
+		const node = mapContainerRef.current
+		if (!node || isMapLoaded) {
+			return
+		}
+
+		if (!('IntersectionObserver' in window)) {
+			setIsMapLoaded(true)
+			return
+		}
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) {
+						return
+					}
+					setIsMapLoaded(true)
+					observer.disconnect()
+				})
+			},
+			{rootMargin: '400px 0px', threshold: 0.01}
+		)
+
+		observer.observe(node)
+
+		return () => {
+			observer.disconnect()
+		}
+	}, [isMapLoaded])
+
 	return (
 		<section className="section reveal-on-scroll" id="contacts">
 			<SectionHeader
@@ -69,13 +104,17 @@ export function ContactsSection() {
 						</div>
 					</div>
 				</div>
-				<div className="map-figure">
-					<iframe
-						title="Автошкола Сирена"
-						src="https://yandex.ru/map-widget/v1/?ll=60.703722%2C55.756716&z=17&l=map&pt=60.703722%2C55.756716%2Cpm2rdm"
-						loading="lazy"
-						referrerPolicy="no-referrer-when-downgrade"
-					/>
+				<div className="map-figure" ref={mapContainerRef}>
+					{isMapLoaded ? (
+						<iframe
+							title="Автошкола Сирена"
+							src="https://yandex.ru/map-widget/v1/?ll=60.703722%2C55.756716&z=17&l=map&pt=60.703722%2C55.756716%2Cpm2rdm"
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+						/>
+					) : (
+						<div className="map-placeholder">Загружаем карту...</div>
+					)}
 				</div>
 			</div>
 		</section>

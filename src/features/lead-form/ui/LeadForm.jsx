@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button } from '../../../shared/ui/Button'
+import { submitLead } from '../api/submitLead'
 import { validateLeadForm } from '../model/validateLeadForm'
 
 const initialValues = {
@@ -16,6 +17,9 @@ export function LeadForm() {
   function handleChange(event) {
     const { name, value } = event.target
     setValues((prev) => ({ ...prev, [name]: value }))
+    if (status !== 'idle') {
+      setStatus('idle')
+    }
   }
 
   async function handleSubmit(event) {
@@ -27,11 +31,14 @@ export function LeadForm() {
       return
     }
 
-    setStatus('loading')
-    await new Promise((resolve) => setTimeout(resolve, 350))
-    setStatus('success')
-    window.alert('Спасибо, мы свяжемся с вами в ближайшее время')
-    setValues(initialValues)
+    try {
+      setStatus('loading')
+      await submitLead(values)
+      setStatus('success')
+      setValues(initialValues)
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -57,6 +64,7 @@ export function LeadForm() {
         {status === 'loading' ? 'Отправка...' : 'Отправить'}
       </Button>
       {status === 'success' ? <p className="form-status success">Спасибо, мы свяжемся с вами</p> : null}
+      {status === 'error' ? <p className="form-status error">Не удалось отправить заявку. Позвоните нам по телефону.</p> : null}
     </form>
   )
 }
