@@ -17,6 +17,7 @@
   --header-bg-bottom: rgba(10, 12, 15, 0.78);
   --hero-watermark: rgba(232, 255, 71, 0.03);
   --map-placeholder-bg: rgba(255, 255, 255, 0.02);
+  --radius-button: 8px;
 }
 
 html,
@@ -252,7 +253,7 @@ h1 {
 }
 
 .btn {
-  border-radius: 4px;
+  border-radius: var(--radius-button);
   padding: 14px 24px;
   border: 1px solid transparent;
   font-family: 'Geologica', sans-serif;
@@ -1172,7 +1173,7 @@ body.vision-mode .documents-page-title {
     height: 40px;
     padding: 0;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: var(--radius-button);
     background: var(--surface);
     color: var(--text);
     cursor: pointer;

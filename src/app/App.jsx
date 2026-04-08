@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../app/styles/global.css'
+import './styles/global.css'
 import { LandingPage } from '../pages/landing/ui/LandingPage'
 import { VisionModeToggle } from '../features/vision-mode/ui/VisionModeToggle'
 import { DocumentsPage } from '../pages/documents/ui/DocumentsPage'
