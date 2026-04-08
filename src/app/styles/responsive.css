@@ -1,0 +1,278 @@
+@media (prefers-reduced-motion: reduce) {
+  .hero-label,
+  .hero h1,
+  .hero-actions,
+  .reveal-on-scroll,
+  .intro-block,
+  .feature-card,
+  .price-card,
+  .card,
+  .contact-item,
+  .site-footer,
+  .documents-page-header,
+  .documents-info-wrap,
+  .documents-list-wrap {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+
+  .scroll-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vision-mode-toggle {
+    top: 14px;
+    right: 72px;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: none;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-header {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+  }
+
+  .site-burger {
+    margin-left: auto;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-button);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .site-burger-line {
+    width: 18px;
+    height: 2px;
+    margin: 0 auto;
+    background: currentColor;
+  }
+
+  .site-burger.is-open .site-burger-line:nth-child(2) {
+    opacity: 0.6;
+  }
+
+  .site-nav-list {
+    order: 3;
+    margin: 0;
+    width: 100%;
+    padding-top: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: visible;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .categories-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid,
+  .consult-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    margin-left: 0;
+  }
+
+  .section-header {
+    margin-bottom: 46px;
+  }
+
+  .contacts-map-block {
+    grid-template-columns: 1fr;
+  }
+
+  .documents-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-meta {
+    align-items: flex-start;
+  }
+
+  .map-figure {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 14px 20px;
+  }
+
+  .site-nav-list {
+    margin-top: 0;
+    row-gap: 0;
+  }
+
+  .site-nav-list a {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .site-header-cta {
+    width: auto;
+    padding: 10px 14px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero {
+    padding-bottom: 72px;
+  }
+
+  .hero-line-art {
+    width: 140vw;
+    bottom: 0;
+    opacity: 0.22;
+    filter: hue-rotate(-6deg) saturate(1.35) brightness(1.18);
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 18%,
+      rgba(0, 0, 0, 0.92) 34%,
+      rgba(0, 0, 0, 0.92) 66%,
+      rgba(0, 0, 0, 0.5) 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 18%,
+      rgba(0, 0, 0, 0.92) 34%,
+      rgba(0, 0, 0, 0.92) 66%,
+      rgba(0, 0, 0, 0.5) 82%,
+      transparent 100%
+    );
+  }
+
+  .hero-actions {
+    margin-top: 84px;
+    margin-left: 0;
+  }
+
+  .consult-contacts-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 34px 24px;
+  }
+
+  .consult-contacts-cta-link {
+    width: auto;
+    min-width: 0;
+  }
+
+  .pricing-grid,
+  .consult-layout,
+  .feature-grid,
+  .categories-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scroll-track .review-card {
+    flex-basis: 88vw;
+    max-width: 88vw;
+  }
+
+  .reviews-track {
+    animation: none;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer {
+    padding: 24px 20px 36px;
+    flex-direction: column;
+  }
+
+  .footer-copy {
+    align-self: flex-start;
+  }
+
+  .footer-contacts {
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .documents-page-title {
+    font-size: clamp(1.95rem, 10vw, 2.9rem);
+    line-height: 0.98;
+  }
+
+  .documents-page {
+    padding-top: 44px;
+  }
+
+  .documents-list {
+    padding-left: 0;
+    gap: 14px;
+  }
+
+  .documents-placeholder {
+    font-size: 0.95rem;
+  }
+
+  .contact-method-link {
+    padding: 18px;
+  }
+
+  .contact-method-title {
+    font-size: 1.5rem;
+  }
+
+  .vision-mode-toggle {
+    left: auto;
+  }
+
+  .vision-mode-toggle-btn {
+    padding: 8px;
+    min-width: 40px;
+    min-height: 40px;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .vision-mode-toggle-label {
+    display: none;
+  }
+}

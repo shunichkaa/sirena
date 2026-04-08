@@ -1,14 +1,15 @@
 import { documentsCategories, documentsPagePlaceholders } from '../../../entities/school/model/content'
 import { documentsCategoryFiles, getDocumentPdfHref } from '../../../entities/school/model/documentsFiles'
+import { Link } from 'react-router-dom'
 
 export function DocumentsPage() {
   return (
     <main className="documents-page section">
       <header className="documents-page-header">
-        <a className="documents-back-link" href="#top">
+        <Link className="documents-back-link" to="/#top">
           <span aria-hidden="true">←</span>
           <span>На главную</span>
-        </a>
+        </Link>
         <h1 className="documents-page-title">
           <span className="line-accent">Сведения</span>
           <br />
@@ -51,7 +52,7 @@ export function DocumentsPage() {
         <nav aria-labelledby="documents-categories-title">
           <ul className="documents-list">
             {documentsCategories.map((category) => {
-              const files = documentsCategoryFiles[category]
+              const files = documentsCategoryFiles[category] ?? []
               return (
                 <li key={category}>
                   <h3 className="documents-category-title">{category}</h3>

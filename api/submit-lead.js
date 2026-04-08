@@ -69,6 +69,11 @@ export default async function handler(request, response) {
 
   const payload = request.body || {}
 
+  if (payload.website) {
+    response.status(200).json({ ok: true })
+    return
+  }
+
   if (!payload.name || !payload.phone) {
     response.status(400).json({ message: 'name и phone обязательны' })
     return
@@ -77,7 +82,7 @@ export default async function handler(request, response) {
   try {
     await Promise.all([sendEmail(payload), sendTelegram(payload)])
     response.status(200).json({ ok: true })
-  } catch (error) {
-    response.status(500).json({ message: error.message || 'Ошибка отправки заявки' })
+  } catch {
+    response.status(500).json({ message: 'Ошибка отправки заявки' })
   }
 }

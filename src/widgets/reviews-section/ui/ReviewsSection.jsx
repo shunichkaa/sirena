@@ -19,7 +19,11 @@ export function ReviewsSection() {
       <div className="reviews-slider" aria-label="Отзывы учеников">
         <div className="scroll-track">
           {loopedReviews.map((item, index) => (
-            <article key={`${item.author}-${index}`} className="review-card">
+            <article
+              key={`${item.author}-${index}`}
+              className="review-card"
+              aria-hidden={index >= reviewsItems.length}
+            >
               <h3>{item.author}</h3>
               <p>{item.text}</p>
             </article>

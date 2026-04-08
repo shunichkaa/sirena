@@ -1,26 +1,21 @@
 import { schoolContacts } from '../../../entities/school/model/content'
 
 export async function submitLead(payload) {
-  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
+  const response = await fetch('/api/submit-lead', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      name: payload.name,
+      phone: payload.phone,
+      message: payload.message || '-',
+      website: payload.website || '',
+    }),
+  })
 
-  if (formspreeEndpoint) {
-    const response = await fetch(formspreeEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        name: payload.name,
-        phone: payload.phone,
-        message: payload.message || '-',
-      }),
-    })
-
-    if (!response.ok) {
-      throw new Error('Не удалось отправить заявку')
-    }
-
+  if (response.ok) {
     return { ok: true }
   }
 

@@ -1,0 +1,57 @@
+.contacts-cta-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.consult-contacts-cta {
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(232, 255, 71, 0.45);
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: clamp(28px, 6vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.consult-contacts-cta::before {
+  content: 'СИРЕНА';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(7rem, 17vw, 16rem);
+  line-height: 0.9;
+  color: rgba(10, 12, 15, 0.08);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.consult-contacts-cta h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 0.92;
+  max-width: 12ch;
+}
+
+.consult-contacts-cta-link {
+  position: relative;
+  z-index: 1;
+  min-width: 240px;
+  background: var(--bg);
+  border-color: var(--bg);
+  color: var(--accent);
+  padding: 18px 34px;
+}
+
+.consult-contacts-cta-link:hover {
+  color: var(--accent);
+  border-color: var(--bg);
+}

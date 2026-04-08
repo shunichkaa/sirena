@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { headerNavItems } from '../../../entities/school/model/content'
 
 export function HeaderSection() {
@@ -14,9 +15,9 @@ export function HeaderSection() {
 
   return (
     <header className="site-header">
-      <a className="site-logo" href="#top">
+      <Link className="site-logo" to="/#top">
         Сирена.
-      </a>
+      </Link>
       <button
         type="button"
         className={`site-burger${isMenuOpen ? ' is-open' : ''}`}
@@ -33,9 +34,15 @@ export function HeaderSection() {
         <ul className="site-nav-list">
           {headerNavItems.map((item) => (
             <li key={item.href}>
-              <a href={item.href} onClick={closeMenu}>
-                {item.label}
-              </a>
+              {item.href.startsWith('/') ? (
+                <Link to={item.href} onClick={closeMenu}>
+                  {item.label}
+                </Link>
+              ) : (
+                <a href={item.href} onClick={closeMenu}>
+                  {item.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>

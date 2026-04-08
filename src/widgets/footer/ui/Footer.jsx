@@ -1,4 +1,5 @@
-import { schoolContacts } from '../../../entities/school/model/content'
+import { officialLinks, schoolContacts } from '../../../entities/school/model/content'
+import { Link } from 'react-router-dom'
 
 export function Footer() {
   return (
@@ -16,8 +17,20 @@ export function Footer() {
             <a href="#contacts">Контакты</a>
           </li>
           <li>
-            <a href="#/documents">Сведения и документы</a>
+            <Link to="/documents">Сведения и документы</Link>
           </li>
+        </ul>
+      </nav>
+      <nav className="footer-official" aria-label="Официальные ресурсы">
+        <p className="footer-contacts-title">Официальные ресурсы</p>
+        <ul className="footer-nav-list">
+          {officialLinks.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
       <div className="footer-contacts">

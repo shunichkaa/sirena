@@ -1,0 +1,96 @@
+@keyframes pulseDot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 255, 71, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(232, 255, 71, 0);
+  }
+}
+
+@keyframes reviewsMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-label,
+.hero h1,
+.hero-actions,
+.intro-block,
+.feature-card,
+.price-card,
+.card,
+.contact-item,
+.site-footer,
+.documents-page-header,
+.documents-info-wrap,
+.documents-list-wrap {
+  opacity: 0;
+  animation: fadeUpIn 0.6s ease forwards;
+}
+
+.hero-label {
+  animation-delay: 0.05s;
+}
+
+.hero h1 {
+  animation-delay: 0.12s;
+}
+
+.hero-actions {
+  animation-delay: 0.2s;
+}
+
+.section-header {
+  animation-delay: 0.05s;
+}
+
+.intro-block {
+  animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(1),
+.price-card:nth-child(1),
+.contact-item:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.feature-card:nth-child(2),
+.price-card:nth-child(2),
+.contact-item:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.feature-card:nth-child(3),
+.price-card:nth-child(3),
+.contact-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(4),
+.contact-item:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.card,
+.site-footer,
+.documents-page-header,
+.documents-info-wrap,
+.documents-list-wrap {
+  animation-delay: 0.1s;
+}

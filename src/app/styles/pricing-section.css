@@ -1,0 +1,41 @@
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.price-card.featured {
+  border-color: var(--accent);
+}
+
+.pricing-grid:focus-within .price-card.featured {
+  border-color: var(--border);
+}
+
+.price-card:focus-visible,
+.price-card:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(232, 255, 71, 0.45);
+  outline: none;
+}
+
+.price-category {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+}
+
+.price-title {
+  font-size: 2rem;
+  margin: 8px 0;
+}
+
+.price-num {
+  font-size: 2.6rem;
+  margin: 16px 0;
+}
+
+.price-list {
+  padding-left: 18px;
+  margin: 0 0 20px;
+  flex: 1;
+}

@@ -15,7 +15,9 @@ export function useVisionMode() {
     document.body.classList.toggle('vision-mode', isVisionModeEnabled)
     try {
       localStorage.setItem(visionModeStorageKey, isVisionModeEnabled ? '1' : '0')
-    } catch {}
+    } catch {
+      return undefined
+    }
   }, [isVisionModeEnabled])
 
   const toggleVisionMode = () => {

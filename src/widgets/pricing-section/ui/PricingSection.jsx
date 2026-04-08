@@ -17,7 +17,7 @@ export function PricingSection() {
       />
       <div className="pricing-grid">
         {pricingItems.map((item) => (
-          <article key={item.title} className={`price-card ${item.featured ? 'featured' : ''}`} tabIndex={0}>
+          <article key={item.title} className={`price-card ${item.featured ? 'featured' : ''}`}>
             <p className="price-category">{item.subtitle}</p>
             <h3 className="price-title">{item.title}</h3>
             <p className="price-desc">{item.note}</p>

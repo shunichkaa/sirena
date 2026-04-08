@@ -1,0 +1,120 @@
+.documents-page {
+  min-height: 100vh;
+  padding-top: 58px;
+}
+
+.documents-page-header {
+  margin-bottom: 34px;
+}
+
+.documents-page-topline {
+  margin-top: 12px;
+  margin-bottom: 22px;
+}
+
+.documents-back-link {
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+
+.documents-back-link span:first-child {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.documents-back-link:hover {
+  opacity: 0.85;
+}
+
+.documents-page-topline .hero-label {
+  margin: 0;
+}
+
+.documents-page-title {
+  font-size: clamp(1.75rem, 3.6vw, 3.3rem);
+  line-height: 1;
+}
+
+body.vision-mode .documents-page-title {
+  font-size: clamp(2.1rem, 4.4vw, 4rem);
+}
+
+.documents-info-wrap .section-title {
+  margin-bottom: 20px;
+}
+
+.documents-info-grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.documents-address {
+  color: var(--text);
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.documents-list-wrap {
+  margin-top: 42px;
+}
+
+.documents-list {
+  margin: 20px 0 28px;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+.documents-category-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--accent);
+}
+
+.documents-file-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  list-style: disc;
+}
+
+.documents-file-list .documents-link {
+  border-bottom: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.documents-link {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  display: inline-block;
+}
+
+.documents-link:hover {
+  color: var(--accent);
+}
+
+.documents-placeholder {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

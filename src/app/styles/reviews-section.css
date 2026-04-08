@@ -1,0 +1,29 @@
+.reviews-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reviews-slider {
+  overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: reviewsMarquee 58s linear infinite;
+  padding: 0 2px 20px;
+}
+
+.reviews-slider:hover .scroll-track,
+.reviews-slider:active .scroll-track,
+.reviews-slider:focus-within .scroll-track {
+  animation-play-state: paused;
+}
+
+.scroll-track .review-card {
+  flex: 0 0 420px;
+}

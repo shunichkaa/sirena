@@ -1,0 +1,51 @@
+.lead-form {
+  display: grid;
+  gap: 10px;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  padding: 12px;
+  font: inherit;
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(232, 255, 71, 0.45);
+}
+
+.lead-form textarea {
+  min-height: 108px;
+  resize: vertical;
+}
+
+.lead-form select {
+  appearance: none;
+}
+
+.field-error,
+.form-status {
+  font-size: 0.85rem;
+}
+
+.field-error,
+.form-status.error {
+  color: #ff6b6b;
+}
+
+.form-status.success {
+  color: var(--accent);
+}
+
+.full-width {
+  width: 100%;
+}

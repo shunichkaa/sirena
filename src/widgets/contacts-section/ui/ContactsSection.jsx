@@ -4,16 +4,15 @@ import {schoolContacts} from '../../../entities/school/model/content'
 
 export function ContactsSection() {
 	const mapContainerRef = useRef(null)
-	const [isMapLoaded, setIsMapLoaded] = useState(false)
+	const [isMapLoaded, setIsMapLoaded] = useState(
+		() => typeof window !== 'undefined' && !('IntersectionObserver' in window)
+	)
+	const mapCenter = `${schoolContacts.mapLon},${schoolContacts.mapLat}`
+	const mapWidgetSrc = `https://yandex.ru/map-widget/v1/?ll=${encodeURIComponent(mapCenter)}&z=17&l=map&pt=${encodeURIComponent(`${mapCenter},pm2rdm`)}`
 
 	useEffect(() => {
 		const node = mapContainerRef.current
 		if (!node || isMapLoaded) {
-			return
-		}
-
-		if (!('IntersectionObserver' in window)) {
-			setIsMapLoaded(true)
 			return
 		}
 
@@ -108,7 +107,7 @@ export function ContactsSection() {
 					{isMapLoaded ? (
 						<iframe
 							title="Автошкола Сирена"
-							src="https://yandex.ru/map-widget/v1/?ll=60.703722%2C55.756716&z=17&l=map&pt=60.703722%2C55.756716%2Cpm2rdm"
+							src={mapWidgetSrc}
 							loading="lazy"
 							referrerPolicy="no-referrer-when-downgrade"
 						/>
