@@ -95,10 +95,6 @@
     grid-template-columns: 1fr;
   }
 
-  .hero-actions {
-    margin-left: 0;
-  }
-
   .section-header {
     margin-bottom: 46px;
   }
@@ -176,11 +172,6 @@
       rgba(0, 0, 0, 0.5) 82%,
       transparent 100%
     );
-  }
-
-  .hero-actions {
-    margin-top: 84px;
-    margin-left: 0;
   }
 
   .consult-contacts-cta {
